@@ -3,6 +3,7 @@ import type { KcContext } from "./kcContext";
 import KcAppBase, { defaultKcProps, useDownloadTerms, useI18n } from "keycloakify";
 import tos_en_url from "./tos_en.md";
 import tos_fr_url from "./tos_fr.md";
+import tos_pl_url from "./tos_pl.md";
 
 export type Props = {
     kcContext: KcContext;
@@ -19,6 +20,8 @@ export default function KcApp(props: Props) {
                     switch (currentLanguageTag) {
                         case "fr":
                             return tos_fr_url;
+                        case 'pl':
+                            return tos_pl_url;
                         default:
                             return tos_en_url;
                     }
@@ -41,6 +44,12 @@ export default function KcApp(props: Props) {
                 // Here we overwrite the default english value for the message "doForgotPassword" 
                 // that is "Forgot Password?" see: https://github.com/InseeFrLab/keycloakify/blob/f0ae5ea908e0aa42391af323b6d5e2fd371af851/src/lib/i18n/generated_messages/18.0.1/login/en.ts#L17
                 "doForgotPassword": "I forgot my password"
+            },
+            "pl": {
+                "foo": "foo po Polsku",
+                // Here we overwrite the default english value for the message "doForgotPassword" 
+                // that is "Forgot Password?" see: https://github.com/InseeFrLab/keycloakify/blob/f0ae5ea908e0aa42391af323b6d5e2fd371af851/src/lib/i18n/generated_messages/18.0.1/login/en.ts#L17
+                "doForgotPassword": "Nie pamiętasz hasła?"
             },
             "fr": {
                 /* spell-checker: disable */
